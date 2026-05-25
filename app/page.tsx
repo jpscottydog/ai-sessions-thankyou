@@ -84,6 +84,28 @@ export default function ThankYouPage() {
         </div>
       </section>
 
+      {/* Safeguard - Did you end up here by accident? */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-studio-wood/20">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold mb-4 text-studio-cream">
+            Wait... Did You End Up Here By Accident?
+          </h2>
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            If you&apos;re looking for the free AI music video guide and somehow landed here without signing up... 
+            well, that&apos;s like showing up to a concert without a ticket.
+          </p>
+          <p className="text-gray-400 mb-8">
+            The good news? The door&apos;s still open.
+          </p>
+          <a
+            href="https://ai-sessions-bridge.vercel.app"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-studio-black bg-gradient-to-r from-studio-amber to-studio-gold rounded-lg glow-amber glow-amber-hover transition-all duration-300 hover:scale-105"
+          >
+            Get on the List →
+          </a>
+        </div>
+      </section>
+
       {/* What Happens Next */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 bg-studio-darker/50">
         <div className="max-w-4xl mx-auto">
@@ -181,11 +203,54 @@ export default function ThankYouPage() {
       {/* Footer */}
       <footer className="px-4 sm:px-6 lg:px-8 py-8 border-t border-studio-wood/20 mt-auto">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">
-            Built by <span className="text-studio-amber">Clutch</span>. 
-            Approved by <span className="text-studio-amber">Justin</span>. 
-            The AI Sessions.
-          </p>
+          <div className="relative inline-block">
+            {/* Handwritten annotation with arrow pointing to Clutch */}
+            <div 
+              className="absolute flex items-start"
+              style={{ top: '-38px', left: '40px' }}
+            >
+              {/* Arrow FIRST (on the left), pointing at Clutch */}
+              <svg 
+                width="60" 
+                height="40" 
+                viewBox="0 0 60 40" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ marginTop: '4px', marginRight: '4px' }}
+              >
+                {/* Shaft - blunt end at H, 90° bend in middle, points straight down */}
+                <path 
+                  d="M58 8C48 8 40 10 35 14C32 18 32 24 32 30" 
+                  stroke="#d97706" 
+                  strokeWidth="2" 
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+                {/* Arrowhead pointing straight DOWN at Clutch */}
+                <path 
+                  d="M28 28L32 36L36 28" 
+                  stroke="#d97706" 
+                  strokeWidth="2" 
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </svg>
+              {/* Text SECOND (on the right), over "Approved" */}
+              <span 
+                className="text-amber-600 font-handwritten text-base italic whitespace-nowrap"
+                style={{ transform: 'rotate(-6deg)' }}
+              >
+                Head AI In Charge
+              </span>
+            </div>
+            <p className="text-sm text-gray-500">
+              Built by <span className="text-studio-amber font-semibold">Clutch</span>. 
+              Approved by <span className="text-studio-amber">Justin</span>. 
+              The AI Sessions.
+            </p>
+          </div>
           <p className="text-xs text-gray-600">
             © {new Date().getFullYear()} ScottyDog Creatives LLC
           </p>
